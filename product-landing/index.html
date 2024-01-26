@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Product Landing Page</title>
+</head>
+<body>
+  <header id="header">
+    <nav id="nav-bar">
+      <img id="header-img" src="https://th.bing.com/th/id/OIP.NZUwWAgE5YzGx8HwRjYedAAAAA?rs=1&pid=ImgDetMain" alt="Logo" width="100px">
+      <a class="nav-link" href="#section1">
+        Home</a>
+      <a class="nav-link" href="#section2">
+        Features</a>
+      <a class="nav-link" href="#section3">
+        Contact Us</a>
+    </nav>
+  </header>
+
+  <div id="section1" class="section">
+    <br><br>
+    <h2>Welcome to Our Smart Home Hub</h2>
+    <p>Transform your living space with our innovative Smart Home Hub. Control your lights, thermostat, and security system seamlessly.</p>
+    <button onclick="window.location='#section2'">Learn More</button>
+  </div>
+
+  <div id="section2" class="section">
+    <br><br>
+    <h2>Key Features</h2>
+    <div class="feature">
+      <br>
+      <h3>Intuitive Control</h3>
+      <p>Effortlessly manage your smart devices through a user-friendly interface. No technical expertise required!</p>
+    </div>
+    <div class="feature">
+      <br>
+      <h3>Customizable Settings</h3>
+      <p>Tailor your home automation experience by customizing settings to suit your preferences and routines.</p>
+    </div>
+    <div class="feature">
+      <br>
+      <h3>Secure and Reliable</h3>
+      <p>Rest easy knowing your data and smart home network are secure. Our Smart Home Hub prioritizes your privacy.</p>
+    </div>
+  </div>
+
+  <div id="section3" class="section">
+    <br>
+    <h2>Contact Us</h2>
+    <p>Have questions or need assistance? Feel free to reach out to our customer support team. We are here to help!</p>
+    <form id="contact-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+      <input type="submit" id="submit" value="Send Message">
+    </form>
+  </div>
+
+  <iframe id="video" src="https://www.youtube-nocookie.com/embed/cb7-Nzy93m0?rel=0&controls=0&showinfo=0" frameborder="0" allowfullscreen title="Smart Home Video"></iframe>
+
+  <form id="form" action="https://www.freecodecamp.com/email-submit" method="post">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <input type="submit" id="submit" value="Submit">
+  </form>
+</body>
+</html>

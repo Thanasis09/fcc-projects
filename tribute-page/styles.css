@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+header > h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    margin: 0;
+}
+#image {
+    width: 1000px;
+    height: auto;
+    text-align: center;
+    max-width: 100%;
+}
+.img-div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+.quote {
+    text-align: center;
+    background-color: lightgrey;
+    padding: 10px;
+    margin: 5px;
+}
+.quote-basic:not(.translation) {
+    font-size: 25px;
+}
+.img-caption {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+.navigation-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.navigation-bar li {
+    float: left;
+} 
+.navigation-bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navigation-bar li a:hover:not(.history) {
+    background-color: #111;
+}
+.navigation-bar li a.history {
+    background-color: #04AA6D;
+}
+.quote-basic, .quote-translation {
+    margin: 0;
+    
+}
+.intro, .life {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+.life > ul {
+    list-style-type: none;
+}
+.footer {
+    overflow-x: hidden;
+    background: #000;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.footer .copyright {
+    width: 100%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 0.8em;
+    display:inline-block;
+    margin:0px 30px;
+    width:100%;
+}
+.footer .copyright a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+}
+
+.footer .copyright a:hover{
+    color:#fff;
+}
+
+@media (max-width:720px){
+    .footer{
+        text-align:left;
+        padding:5%;
+    }
+    .footer .copyright{
+        display:block;
+        margin:10px 0px;
+        text-align:left;
+    }
+    .footer .copyright a {
+        margin:0% 3%;
+    }
+}
+.timeline {
+    list-style-type: none;
+    text-align: center;
+    font-size: larger;
+}

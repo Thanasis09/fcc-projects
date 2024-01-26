@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lua Documentation</title>
+</head>
+<body>
+  <nav id="navbar">
+    <header>Lua Documentation</header>
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <a class="nav-link" href="#Installation_and_Setup">Installation and Setup</a>
+    <a class="nav-link" href="#Basic_Syntax">Basic Syntax</a>
+    <a class="nav-link" href="#Functions">Functions</a>
+    <a class="nav-link" href="#Tables_and_Arrays">Tables and Arrays</a>
+    <a class="nav-link" href="#Modules">Modules</a>
+    <a class="nav-link" href="#Error_Handling">Error Handling</a>
+    <a class="nav-link" href="#Best_Practices">Best Practices</a>
+    <a class="nav-link" href="#Resources_and_Further_Reading">Resources and Further Reading</a>
+  </nav>
+  <div id="main-doc">
+    <section id="Introduction" class="main-section">
+      <header class="section-header">Introduction</header>
+      <p>
+        <strong>Overview</strong>
+        Lua is a lightweight, high-level scripting language designed for embedded systems, game development, and general-purpose programming. Developed at PUC-Rio (Pontifical Catholic University of Rio de Janeiro) in Brazil, Lua has gained popularity for its simplicity, efficiency, and ease of integration. With a minimalistic yet powerful syntax, Lua serves as an excellent choice for tasks ranging from simple scripting to complex application development.
+        </p>
+        <p>
+          <strong>Use Cases</strong>
+          Lua finds application in various domains:
+          <ul>
+            <li>
+              <strong>Scripting:</strong>
+              Lua is commonly used as a scripting language in applications and games due to its small footprint and ease of integration.</li>
+            <li>
+              <strong>Game Development:</strong>
+            Lua is a popular choice for scripting within game engines, allowing developers to extend and customize game logic easily.
+            </li>
+            <li>
+              <strong>Embedded Systems:</strong>
+            Lua's lightweight design makes it suitable for embedded systems, providing scripting capabilities without imposing a significant resource burden.
+            </li>
+        </ul>
+        </p>
+        <p>In this documentation, we will delve into the fundamentals of Lua, covering installation, basic syntax, advanced features, and best
+        practices.
+        </p>
+    </section>
+        <section id="Installation_and_Setup" class="main-section">
+      <header class="section-header">Installation and Setup</header>
+      <p>
+        <strong>System Requirements</strong>
+      </p>
+      <p>Before installing Lua, ensure that your system meets the following requirements:</p>
+      <ul>
+        <li>Operating System: Windows, macOS, Linux</li>
+        <li>Minimal Dependencies: Lua has minimal dependencies, making it easy to install on various platforms.</li>
+      </ul>
+      <p>
+        <strong>Installation Steps</strong>
+      </p>
+      <ol>
+        <li>Download the Lua interpreter from the official website.</li>
+        <li>Follow the installation instructions for your operating system.</li>
+        <li>Verify the installation by running <code>$ lua -v</code> in your terminal or command prompt.</li>
+      </ol>
+    </section>
+
+    <section id="Basic_Syntax" class="main-section">
+      <header class="section-header">Basic Syntax</header>
+      <p>
+        <strong>Variables and Data Types</strong>
+      </p>
+      <p>In Lua, variables are dynamically typed, meaning they can hold values of any type. Common data types include:</p>
+      <ul>
+        <li>Numeric values (integer or floating-point):<code>number</code></li>
+        <li>Textual data enclosed in single or double quotes:<code>string</code></li>
+        <li>Represents true or false:<code>boolean</code></li>
+        <li>A versatile data structure for storing key-value pairs:<code>table</code></li>
+      </ul>
+      <p>Examples of how variables can be defined:</p>
+      <code>
+        a = 12 
+        -- variables are global by default
+        local a = 12 
+        -- to make them local we add the local keyword
+        a, b = 12, 10
+        -- we can assign multiple variables easily
+        a, b = 12
+        -- here, value of a is 12 and of b is nil (none)
+      </code>
+      <p><strong>Control Structures</strong></p>
+      <p>Control structures in Lua include:</p>
+      <ul>
+        <li>Conditional statements:<code>if-then-else</code></li>
+        <li>Looping constructs for iteration:<code>for and while</code></li>
+        <li>Define reusable blocks of code:<code>function</code></li>
+      </ul>
+    </section>
+
+    <section id="Functions" class="main-section">
+      <header class="section-header">Functions</header>
+      <p><strong>Function Definition</strong></p>
+      <p>In Lua, functions are defined using the <code>function</code>keyword. Here's an example:</p>
+      <pre>
+        <code>
+function greet(name)
+  print("Hello, " .. name .. "!")
+end
+        </code>
+      </pre>
+      <p><strong>Function Invocation</strong></p>
+      <p>Invoke a function by using its name followed by parentheses:</p>
+      <pre>
+        <code>
+greet("John")
+        </code>
+      </pre>
+      <p>This will output: <code>Hello, John!</code></p>
+    </section>
+
+    <section id="Tables_and_Arrays" class="main-section">
+      <header class="section-header">Tables and Arrays</header>
+      <p><strong>Introduction to Tables</strong></p>
+      <p>Tables in Lua are versatile data structures that can be used as arrays, dictionaries, or a combination of both. They are created using curly braces:</p>
+      <pre>
+        <code>
+-- Creating an empty table
+myTable = {}
+
+-- Adding elements
+myTable[1] = "apple"
+myTable[2] = "orange"
+        </code>
+      </pre>
+      <p><strong>Iteration Over Tables</strong></p>
+      <p>Use the 'for' loop to iterate over the elements of a table:</p>
+      <pre>
+        <code>
+for k, v in pairs(myTable) do
+  print(k, v)
+end
+        </code>
+      </pre>
+    </section>
+    <section id="Modules" class="main-section">
+      <header class="section-header">Modules</header>
+      <p>
+        <strong>Creating Modules</strong>
+      </p>
+      <p>In Lua, modules allow you to organize code into separate files. A module can contain functions, variables, and tables that can be reused in other parts of your program. Here's an example of creating a simple module:
+      </p>
+      <pre>
+        <code>
+-- mymodule.lua
+local M = {}
+
+function M.sayHello()
+  print("Hello from the module!")
+end
+
+return M
+        </code>
+      </pre>
+      <p>
+        <strong>Using Modules</strong>
+      </p>
+      <p>To use the module in your main program:</p>
+      <pre>
+        <code>
+local myModule = require("mymodule")
+myModule.sayHello()
+        </code>
+      </pre>
+    </section>
+    <section id="Error_Handling" class="main-section">
+      <header class="section-header">Error Handling</header>
+      <p>
+        <strong>Handling Errors in Lua</strong>
+        </p>
+      <p>Lua provides a simple mechanism for error handling using the <code>pcall</code> function. This function allows you to call a function and catch any errors that occur during its execution. Here's an example:</p>
+      <pre>
+        <code>
+local success, result = pcall(function()
+  -- Code that might cause an error
+  error("An example error")
+end)
+
+if success then
+  print("Success! Result:", result)
+else
+  print("Error:", result)
+end
+        </code>
+      </pre>
+    </section>
+    <section id="Best_Practices" class="main-section">
+      <header class="section-header">Best Practices</header>
+      <p>
+        <strong>Writing Clean and Efficient Lua Code</strong>
+      </p>
+      <ul>
+        <li><strong>Use Meaningful Variable Names:</strong> Choose descriptive names for variables and functions to enhance code readability.</li>
+        <li><strong>Organize Code with Functions and Modules:</strong> Break down your code into functions and modules to improve maintainability.</li>
+        <li><strong>Error Handling:</strong> Implement proper error handling to gracefully handle unexpected situations.</li>
+        <li><strong>Commenting:</strong> Add comments to explain complex sections of your code and provide context for future developers.</li>
+        <li><strong>Follow Lua Style Guide:</strong> Adhere to the Lua style guide to maintain consistency in your codebase.</li>
+      </ul>
+    </section>
+
+    <section id="Resources_and_Further_Reading" class="main-section">
+      <header class="section-header">Resources and Further Reading</header>
+      <p><strong>Official Lua Documentation</strong></p>
+      <p>Explore the official Lua documentation for in-depth information and examples: <a href="https://www.lua.org/docs.html">Lua Documentation</a></p>
+      <p><strong>Programming in Lua</strong></p>
+      <p>For a comprehensive guide to Lua programming, consider reading "Programming in Lua" by Roberto Ierusalimschy.</p>
+      <p><strong>Online Lua Community</strong></p>
+      <p>Engage with the Lua community online, ask questions, and share your knowledge on forums such as the Lua mailing list and the Lua subreddit.</p>
+    </section>
+  </div>
+</body>
+</html>
